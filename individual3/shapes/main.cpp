@@ -81,11 +81,11 @@ int main()
     std::cout << "\n\n" << square_clone.getName() << " has been moved to -4.5 positions!\n";
 
     std::cout << "\n------------------------------------------------------";
-    std::cout << "\ninfo about " << new_square.getName() << ":" << new_square.getCentre();
+    std::cout << "\ninfo about " << new_square.getName() << ":";
     new_square.getInfo();
 
     std::cout << "\n------------------------------------------------------";
-    std::cout << "\ninfo about " << square_clone.getName() << ":" << square_clone.getCentre();
+    std::cout << "\ninfo about " << square_clone.getName() << ":";
     square_clone.getInfo();
     std::cout << "\n------------------------------------------------------";
 
@@ -161,11 +161,11 @@ int main()
     std::cout << "\n\n" << new_circle.getName() << " has been moved to -11.0 positions!\n";
 
     std::cout << "\n------------------------------------------------------";
-    std::cout << "\ninfo about " << new_circle.getName() << ":" << new_circle.getCentre();
+    std::cout << "\ninfo about " << new_circle.getName() << ":";
     new_circle.getInfo();
 
     std::cout << "\n------------------------------------------------------";
-    std::cout << "\ninfo about " << circle_clone.getName() << ":" << circle_clone.getCentre();
+    std::cout << "\ninfo about " << circle_clone.getName() << ":";
     circle_clone.getInfo();
     std::cout << "\n------------------------------------------------------";
 
