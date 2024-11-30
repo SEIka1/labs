@@ -1,6 +1,8 @@
 #include <iostream>
 #include "shapes.h"
 
+//5+2
+
 int main()
 {
     std::cout << "\nTESTS FOR SQUARE:\n\n";
