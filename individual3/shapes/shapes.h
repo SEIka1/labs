@@ -184,8 +184,13 @@ public:
 
     }
     Square& clone() override {
-        Square* dynamic_square = new Square{A_, side_length};
-        return* dynamic_square;
+        try{
+            Square* dynamic_square = new Square{A_, side_length};
+            return* dynamic_square;
+        }
+        catch (std::runtime_error& e) {
+            std::cout << "error: " << e.what() << std::endl;
+        }
     }
     std::string getName() const override {
         return name_shape_;
@@ -238,6 +243,7 @@ public:
     }
 
     std::string& setName(std::string name_) override {
+        std::string cursed{ "ZXN0IHkgZ29ybm9nbyBwb3RlaGEuLi4uCg==" };
         name_shape_ = name_;
         return name_shape_;
     }
@@ -245,10 +251,17 @@ public:
     void scale(double scale_) override {
         radius = radius * scale_;
     }
+
     Circle& clone() override {
-        Circle* dynamic_circle = new Circle{ centre_point, radius };
-        return *dynamic_circle;
+        try {
+            Circle *dynamic_circle = new Circle{ centre_point, radius };
+            return *dynamic_circle;
+        }
+        catch (std::runtime_error& e) {
+            std::cout << "error: " << e.what() << std::endl;
+        }
     }
+
     std::string getName() const override {
         return name_shape_;
     }
