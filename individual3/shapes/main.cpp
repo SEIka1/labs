@@ -60,7 +60,8 @@ int main()
     new_square.setName(new_name_for_shape);
     std::cout << "\nnew name of your shape is: " << new_square.getName();
 
-    Square square_clone = new_square.clone();
+    Square& square_clone = new_square.clone();
+ 
     std::cout << "\n\nthe clone of shape \"" << new_square.getName() << "\" has been created!\n"
               << "\nenter the name of new shape: ";
     std::string new_name_for_shape_2;
@@ -81,11 +82,11 @@ int main()
     std::cout << "\n\n" << square_clone.getName() << " has been moved to -4.5 positions!\n";
 
     std::cout << "\n------------------------------------------------------";
-    std::cout << "\ninfo about " << new_square.getName() << ":";
+    std::cout << "\ninfo about " << new_square.getName() << ":" << new_square.getCentre();
     new_square.getInfo();
 
     std::cout << "\n------------------------------------------------------";
-    std::cout << "\ninfo about " << square_clone.getName() << ":";
+    std::cout << "\ninfo about " << square_clone.getName() << ":" << square_clone.getCentre();
     square_clone.getInfo();
     std::cout << "\n------------------------------------------------------";
 
@@ -136,7 +137,7 @@ int main()
     new_circle.setName(new_name_for_circle);
     std::cout << "\nnew name of your shape is: " << new_circle.getName();
 
-    Circle circle_clone = new_circle.clone();
+    Circle& circle_clone = new_circle.clone();
     std::cout << "\n\nthe clone of shape \"" << new_circle.getName() << "\" has been created!\n"
         << "\nenter the name of new shape: ";
     std::string new_name_for_circle_2;
@@ -161,19 +162,27 @@ int main()
     std::cout << "\n\n" << new_circle.getName() << " has been moved to -11.0 positions!\n";
 
     std::cout << "\n------------------------------------------------------";
-    std::cout << "\ninfo about " << new_circle.getName() << ":";
+    std::cout << "\ninfo about " << new_circle.getName() << ":" << new_circle.getCentre();
     new_circle.getInfo();
 
     std::cout << "\n------------------------------------------------------";
-    std::cout << "\ninfo about " << circle_clone.getName() << ":";
+    std::cout << "\ninfo about " << circle_clone.getName() << ":" << circle_clone.getCentre();
     circle_clone.getInfo();
     std::cout << "\n------------------------------------------------------";
 
     std::cout << "\n\n\n";
 
-    std::cout << "to check the result: https://www.geogebra.org/geometry/f8mnm3cp\n\n\n\n";
+    try {
+        delete& circle_clone;
+        delete& square_clone;
 
-    system("pause");
+        std::cout << "to check the result: https://www.geogebra.org/geometry/f8mnm3cp\n\n\n\n";
 
-
+        system("pause");
+    }
+    catch (std::runtime_error& e) {
+        std::cout << "Fatal error: " << e.what() << std::endl;
+        std::cout << "you have no result cause the program ends with an error";
+        return 0;
+    }
 }
