@@ -1,6 +1,5 @@
 #include <iostream>
 
-//5+2
 
 class Point;
 class Shape;
@@ -106,6 +105,8 @@ protected:
     std::string name_shape_;
     int level_of_shape_;
     int rank_in_top_;
+public:
+    virtual ~Shape() {}
 };
 
 class FrameRectangle
@@ -116,6 +117,7 @@ protected:
     double pos_of_center_;
 public:
     virtual void getFrameRectangle() const = 0;
+    virtual ~FrameRectangle() {}
 };
 
 class Square : private Shape, FrameRectangle
